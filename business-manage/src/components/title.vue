@@ -54,14 +54,7 @@
   </div>
 </div>
 
-<!-- Unnamed (图片) -->
-<div id="u112" class="ax_default image">
-  <img id="u112_img" class="img " :src="images.u112"/>
-  <!-- Unnamed () -->
-  <div id="u113" class="text" style="display:none; visibility: hidden">
-    <p><span></span></p>
-  </div>
-</div>
+
 
     </div>
 </template>
