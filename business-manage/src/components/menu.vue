@@ -21,6 +21,10 @@ const router  = useRouter()
 const goTo = (path) => {
   router.push(path)
 }
+// function goToDashboard() {
+ 
+//   router.push('/home')
+// }
 </script>
 
 <template>

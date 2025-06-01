@@ -6,8 +6,14 @@ import Opportunity_edit from '@/views/opportunity_edit.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/',
+      redirect: '/home',  // 👈 首页直接跳转
+    },
     { path: '/', 
-      redirect: '/home' ,
+      // redirect: '/home' ,
+      name: 'index',
+      component:() => import('@/components/index.vue') ,
       children: [
         {
           path: 'home',
@@ -26,38 +32,41 @@ const router = createRouter({
             ]
         },
         // 其他子路由...
+       
       ]
+       
     },
-    
-    // {
-    //   path: '/home',
-    //   name: 'home',
-    //   component: Home,
-    // },
-    // {
-    //   path: '/opportunity',
-    //   name: 'opportunity',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   // component: () => import('../views/AboutView.vue'),
-    //   component: Opportunity
-    // },
-    // {
-    //   path: '/',
-    //   component: () => import('@/components/index.vue'),
-    //   children: [
-    //     {
-    //       path: 'home',
-    //       component: () => import('@/views/home.vue'),
-    //     },
-    //     {
-    //       path: 'opportunity',
-    //       component: () => import('@/views/opportunity.vue'),
-    //     }
-    //   ]
-    // }
+    // ❗⚠️ 最后一项：非法路径全部重定向到首页
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'  // 👈 可以改成 '/login' 或其他入口页
+    },
   ],
+})
+router.beforeEach((to, from, next) => {
+
+  // if (to.path === '/') {
+  //   // sessionStorage.removeItem('entry')  // 回到首页时清除标志
+  //   sessionStorage.setItem('index', 'true')
+  //   next()
+  // } else if (!isEnteredFromHome) {
+  //   // ❗如果不是从首页跳来的，拦截并重定向回首页
+  //   next('/')
+  // } else {
+  //   next()
+  // }
+  const isEnteredFromHome = sessionStorage.getItem('index') === 'true'
+  if (to.path === '/home') {
+    console.log("进入首页,并设置了首页缓存")
+    sessionStorage.setItem('index', 'true')
+    next()
+  } else if (!isEnteredFromHome) {
+    console.log("没有金国首页,进首页")
+    next('/home')
+  } else {
+    next()
+  }
+   
 })
 
 export default router

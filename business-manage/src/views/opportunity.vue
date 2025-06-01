@@ -1227,11 +1227,11 @@
         <div id="u455_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u456" class="text">
-          <p @click="showCreate = true"><span>新建商机</span></p>
+          <p @click="toggle"><span>新建商机</span></p>
         </div>
       </div>
        <!-- 点击后才加载 TodoDetail -->
-    <Opportunity_edit v-if="showCreate" @close="showCreate = false" />
+    <Opportunity_edit v-if="showCreate"  />
       
     </div>
 </template>
@@ -1266,13 +1266,9 @@ const images = {
 }
 import Opportunity_edit from './opportunity_edit.vue';
 import { ref } from 'vue'
-// import { useRouter } from 'vue-router'
-
-// const router  = useRouter()
-
-// const goTo = () => {
-//   router.push("opportunity_edit")
-// }
 
 const showCreate = ref(false)
+function toggle() {
+  showCreate.value = !showCreate.value
+}
 </script>
