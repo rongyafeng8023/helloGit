@@ -19,7 +19,6 @@ import { useRouter } from 'vue-router'
 const router  = useRouter()
 
 const goTo = (path) => {
-  console.log("我进来了")
   router.push(path)
 }
 </script>

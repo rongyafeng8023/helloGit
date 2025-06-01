@@ -1,19 +1,17 @@
 <script setup>
  import Index from './components/index.vue'
+ import Playground from './components/playground.vue';
 
 </script>
 
 <template>
-  <div id="app" class="layout">
+  <div id="app" >
     <Index/>
     <!-- <div style="flex: 1; overflow: auto;"></div> -->
-    <router-view />  
+    <Playground />  
   </div>
 </template>
 
 <style scoped>
-.layout {
-  display: flex;
-  height: 100vh;
-}
+
 </style>

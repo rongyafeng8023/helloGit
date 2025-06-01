@@ -40,15 +40,7 @@ import Title_b from './title.vue'
         <p><span></span></p>
       </div>
     </div>
-
-    <!-- Unnamed (矩形) -->
-    <!-- <div id="u96" class="ax_default box_1">
-      <div id="u96_div" class=""></div>
-      
-      <div id="u97" class="text" style="display:none; visibility: hidden">
-        <p><span></span></p>
-      </div>
-    </div> -->
+      <router-view/>
     <!--标题栏-->
       <Title_b/>
       

@@ -1,33 +1,39 @@
 <script setup>
 const images = {
-  u189: new URL('@/assets/images/business_charge/u189', import.meta.url).href,
-  u191: new URL('@/assets/images/business_charge/u191', import.meta.url).href,
-  u193: new URL('@/assets/images/business_charge/u193', import.meta.url).href,
-  u195: new URL('@/assets/images/business_charge/u195', import.meta.url).href,
-  u196: new URL('@/assets/images/business_charge/u196', import.meta.url).href,
-  u199: new URL('@/assets/images/business_charge/u199', import.meta.url).href,
-  u201: new URL('@/assets/images/business_charge/u201', import.meta.url).href,
-  u203: new URL('@/assets/images/business_charge/u203', import.meta.url).href,
-  u205: new URL('@/assets/images/business_charge/u205', import.meta.url).href,
-  u207: new URL('@/assets/images/business_charge/u207', import.meta.url).href,
-  u209: new URL('@/assets/images/business_charge/u209', import.meta.url).href,
-  u211: new URL('@/assets/images/business_charge/u211', import.meta.url).href,
-  u213: new URL('@/assets/images/business_charge/u213', import.meta.url).href,
-  u329: new URL('@/assets/images/business_charge/u329', import.meta.url).href,
-  u331: new URL('@/assets/images/business_charge/u331', import.meta.url).href,
-  u333: new URL('@/assets/images/business_charge/u333', import.meta.url).href,
-  u335: new URL('@/assets/images/business_charge/u335', import.meta.url).href,
-  u337: new URL('@/assets/images/business_charge/u337', import.meta.url).href,
-  u339: new URL('@/assets/images/business_charge/u339', import.meta.url).href,
-  u341: new URL('@/assets/images/business_charge/u341', import.meta.url).href,
-  u371: new URL('@/assets/images/business_charge/u371', import.meta.url).href,
-  u377: new URL('@/assets/images/business_charge/u377', import.meta.url).href,
-  u387: new URL('@/assets/images/business_charge/u387', import.meta.url).href,
-  u389: new URL('@/assets/images/business_charge/u389', import.meta.url).href,
-  u416: new URL('@/assets/images/business_charge/u416', import.meta.url).href
+  u189: new URL('@/assets/images/business_charge/u189.png', import.meta.url).href,
+  u191: new URL('@/assets/images/business_charge/u191.png', import.meta.url).href,
+  u193: new URL('@/assets/images/business_charge/u193.png', import.meta.url).href,
+  u195: new URL('@/assets/images/business_charge/u195.png', import.meta.url).href,
+  u196: new URL('@/assets/images/business_charge/u196.png', import.meta.url).href,
+  u199: new URL('@/assets/images/business_charge/u199.png', import.meta.url).href,
+  u201: new URL('@/assets/images/business_charge/u201.png', import.meta.url).href,
+  u203: new URL('@/assets/images/business_charge/u203.png', import.meta.url).href,
+  u205: new URL('@/assets/images/business_charge/u205.png', import.meta.url).href,
+  u207: new URL('@/assets/images/business_charge/u207.png', import.meta.url).href,
+  u209: new URL('@/assets/images/business_charge/u209.png', import.meta.url).href,
+  u211: new URL('@/assets/images/business_charge/u211.png', import.meta.url).href,
+  u213: new URL('@/assets/images/business_charge/u213.png', import.meta.url).href,
+  u329: new URL('@/assets/images/business_charge/u329.png', import.meta.url).href,
+  u331: new URL('@/assets/images/business_charge/u331.png', import.meta.url).href,
+  u333: new URL('@/assets/images/business_charge/u333.png', import.meta.url).href,
+  u335: new URL('@/assets/images/business_charge/u335.png', import.meta.url).href,
+  u337: new URL('@/assets/images/business_charge/u337.png', import.meta.url).href,
+  u339: new URL('@/assets/images/business_charge/u339.png', import.meta.url).href,
+  u341: new URL('@/assets/images/business_charge/u341.png', import.meta.url).href,
+  u371: new URL('@/assets/images/business_charge/u371.png', import.meta.url).href,
+  u377: new URL('@/assets/images/business_charge/u377.png', import.meta.url).href,
+  u387: new URL('@/assets/images/business_charge/u387.png', import.meta.url).href,
+  u389: new URL('@/assets/images/business_charge/u389.png', import.meta.url).href,
+  u416: new URL('@/assets/images/business_charge/u416.png', import.meta.url).href
 
 }
-console.log("我是商机页面")
+import { useRouter } from 'vue-router'
+
+const router  = useRouter()
+
+const goTo = () => {
+  router.push("opportunity_edit")
+}
 </script>
 <template>
     <div>
@@ -1253,5 +1259,13 @@ console.log("我是商机页面")
           <p><span>—</span></p>
         </div>
       </div>
+      <div id="u455" class="ax_default button">
+        <div id="u455_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u456" class="text">
+          <p @click="goTo()"><span>新建商机</span></p>
+        </div>
+      </div>
+      <router-view/>
     </div>
 </template>
