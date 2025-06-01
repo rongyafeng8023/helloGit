@@ -8,7 +8,7 @@
   <div id="app" >
     <Index/>
     <!-- <div style="flex: 1; overflow: auto;"></div> -->
-    <Playground />  
+    <!-- <Playground />   -->
   </div>
 </template>
 
